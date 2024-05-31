@@ -83,3 +83,13 @@ def execute_query_group_by(db_file, query_group_by_sql_file):
             sql_script = file.read()
         conn.executescript(sql_script)
         print(f"Executed SQL from {query_group_by_sql_file}")
+
+# Define function combining data from two tables
+def execute_query_join(db_file, query_join_sql_file):
+    with sqlite3.connect(db_file) as conn:
+        query_join_sql_file = pathlib.Path("query_join.sql")
+        with open(query_join_sql_file, 'r') as file:
+            sql_script = file.read()
+        conn.executescript(sql_script)
+        print(f"Executed SQL from {query_join_sql_file}")
+
