@@ -48,3 +48,12 @@ def execute_delete_records(db_file, delete_records_sql_file):
         conn.executescript(sql_script)
         print(f"Executed SQL from {delete_records_sql_file}")
 
+# Define function updating records from data tables
+def execute_update_records(db_file, update_records_sql_file):
+    with sqlite3.connect(db_file) as conn:
+        update_records_sql_file = pathlib.Path("update_records.sql")
+        with open(update_records_sql_file, 'r') as file:
+            sql_script = file.read()
+        conn.executescript(sql_script)
+        print(f"Executed SQL from {update_records_sql_file}")
+
