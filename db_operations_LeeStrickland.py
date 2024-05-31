@@ -57,3 +57,12 @@ def execute_update_records(db_file, update_records_sql_file):
         conn.executescript(sql_script)
         print(f"Executed SQL from {update_records_sql_file}")
 
+# Define function performing operations on data from tables
+def execute_query_aggregation(db_file, query_aggregation_sql_file):
+    with sqlite3.connect(db_file) as conn:
+        query_aggregation_sql_file = pathlib.Path("query_aggregation.sql")
+        with open(query_aggregation_sql_file, 'r') as file:
+            sql_script = file.read()
+        conn.executescript(sql_script)
+        print(f"Executed SQL from {query_aggregation_sql_file}")
+
