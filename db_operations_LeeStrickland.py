@@ -102,3 +102,15 @@ def execute_query_sorting(db_file, query_sorting_sql_file):
         conn.executescript(sql_script)
         print(f"Executed SQL from {query_sorting_sql_file}")
 
+def main():
+
+    # Create database schema and populate with data
+    execute_insert_records(db_file, 'insert_records.sql')
+    execute_delete_records(db_file, 'delete_records.sql')
+    execute_update_records(db_file, 'update_records.sql')
+    execute_query_aggregation(db_file, 'query_aggregation.sql')
+    execute_query_filter(db_file, 'query_filter.sql')
+    execute_query_group_by(db_file, 'query_group_by.sql')
+    execute_query_join(db_file, 'query_join.sql')
+    execute_query_sorting(db_file, 'query_sorting.sql')
+
