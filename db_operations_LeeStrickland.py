@@ -93,3 +93,12 @@ def execute_query_join(db_file, query_join_sql_file):
         conn.executescript(sql_script)
         print(f"Executed SQL from {query_join_sql_file}")
 
+# Define function sorting data in tables
+def execute_query_sorting(db_file, query_sorting_sql_file):
+    with sqlite3.connect(db_file) as conn:
+        query_sorting_sql_file = pathlib.Path("query_sorting.sql")
+        with open(query_sorting_sql_file, 'r') as file:
+            sql_script = file.read()
+        conn.executescript(sql_script)
+        print(f"Executed SQL from {query_sorting_sql_file}")
+
