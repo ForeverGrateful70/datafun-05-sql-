@@ -66,3 +66,20 @@ def execute_query_aggregation(db_file, query_aggregation_sql_file):
         conn.executescript(sql_script)
         print(f"Executed SQL from {query_aggregation_sql_file}")
 
+# Define function filtering data from tables
+def execute_query_filter(db_file, query_filter_sql_file):
+    with sqlite3.connect(db_file) as conn:
+        query_filter_sql_file = pathlib.Path("query_filter.sql")
+        with open(query_filter_sql_file, 'r') as file:
+            sql_script = file.read()
+        conn.executescript(sql_script)
+        print(f"Executed SQL from {query_filter_sql_file}")
+
+# Define function grouping data from tables
+def execute_query_group_by(db_file, query_group_by_sql_file):
+    with sqlite3.connect(db_file) as conn:
+        query_group_by_sql_file = pathlib.Path("query_group_by.sql")
+        with open(query_group_by_sql_file, 'r') as file:
+            sql_script = file.read()
+        conn.executescript(sql_script)
+        print(f"Executed SQL from {query_group_by_sql_file}")
