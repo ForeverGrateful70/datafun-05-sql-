@@ -114,3 +114,5 @@ def main():
     execute_query_join(db_file, 'query_join.sql')
     execute_query_sorting(db_file, 'query_sorting.sql')
 
+if __name__ == "__main__":
+    main()
